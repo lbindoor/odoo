@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: odoo-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    networks:
+      - odoo-net
+
+  odoo:
+    image: odoo:${ODOO_VERSION}
+    container_name: odoo
+    depends_on:
+      - db
+    ports:                          # en vez de publicar puertos, lo exponemos a NPM
+      - "8069:8069"
+    environment:
+      HOST: db
+      USER: ${POSTGRES_USER}
+      PASSWORD: ${POSTGRES_PASSWORD}
+      DATABASE: ${POSTGRES_DB}
+      ADMIN_PASSWORD: ${ODOO_PASSWORD}
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./addons:/mnt/extra-addons
+    networks:
+      - odoo-net
+      - indoor-barca-net             # red compartida con Nginx Proxy Manager
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:
+
+networks:
+  odoo-net:
+  indoor-barca-net:
+    external: true
