@@ -1,0 +1,194 @@
+<odoo>
+  <!-- ===================== AUSENCIAS (CONFIGURACIÓN) ===================== -->
+  <record id="view_remu_conf_aus_tipo_tree" model="ir.ui.view">
+    <field name="name">remu.conf.ausencia.tipo.tree</field>
+    <field name="model">remu.conf.ausencia.tipo</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="code"/>
+        <field name="requiere_justificacion"/>
+        <field name="descuenta_remuneracion"/>
+        <field name="activo"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_remu_conf_aus_tipo_form" model="ir.ui.view">
+    <field name="name">remu.conf.ausencia.tipo.form</field>
+    <field name="model">remu.conf.ausencia.tipo</field>
+    <field name="arch" type="xml">
+      <form string="Tipo de Ausencia">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="code"/>
+            <field name="requiere_justificacion"/>
+            <field name="descuenta_remuneracion"/>
+            <field name="activo"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_remu_conf_aus_tipo" model="ir.actions.act_window">
+    <field name="name">Tipos de Ausencia</field>
+    <field name="res_model">remu.conf.ausencia.tipo</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- ===================== CONCEPTOS (HABERES Y DESCUENTOS) ===================== -->
+  <record id="view_remu_conf_concepto_tree" model="ir.ui.view">
+    <field name="name">remu.conf.concepto.tree</field>
+    <field name="model">remu.conf.concepto</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="code"/>
+        <field name="name"/>
+        <field name="nature"/>
+        <field name="imponible"/>
+        <field name="tributa"/>
+        <field name="class_type"/>
+        <field name="currency_type"/>
+        <field name="amount_pesos"/>
+        <field name="porcentaje"/>
+        <field name="factor"/>
+        <field name="lre_classification"/>
+        <field name="activo"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_remu_conf_concepto_form" model="ir.ui.view">
+    <field name="name">remu.conf.concepto.form</field>
+    <field name="model">remu.conf.concepto</field>
+    <field name="arch" type="xml">
+      <form string="Edición de Haber y Descuento">
+        <sheet>
+          <group>
+            <group string="Tipo de Concepto">
+              <group>
+                <field name="code"/>
+              </group>
+              <group>
+                <field name="nature"/>
+              </group>
+              <field name="name" string="Descripción"/>
+            </group>
+          </group>
+
+          <group>
+            <group string="Clasificación" colspan="2">
+              <group>
+                <field name="imponible"/>
+                <field name="adicional_horas_extras"/>
+                <field name="reliquida_imp_unico"/>
+                <field name="horas_extras"/>
+                <field name="adicional_sueldo_base"/>
+              </group>
+              <group>
+                <field name="tributa"/>
+                <field name="adicional_valor_dia_hora"/>
+                <field name="renta_exenta"
+                       modifiers='{"readonly": [["tributa", "=", true]]}'/>
+                <field name="haber_variable_semana_corrida"/>
+                <field name="cuota_reliquidacion_mes"/>
+              </group>
+            </group>
+
+            <group string="Características">
+              <group>
+                <field name="class_type"/>
+                <field name="currency_type"/>
+                <field name="amount_other"
+                       modifiers='{"invisible": [["currency_type", "=", "CLP"]]}'/>
+                <field name="porcentaje"/>
+                <field name="lre_classification"/>
+              </group>
+              <group>
+                <field name="amount_pesos"
+                       modifiers='{"invisible": [["currency_type", "!=", "CLP"]]}'/>
+                <field name="dia_cambio"/>
+                <field name="campo_resultado"/>
+                <field name="factor"/>
+              </group>
+            </group>
+
+            <group string="Opciones">
+              <field name="exportable_lre"/>
+              <field name="no_calcula_gratificacion"/>
+              <field name="proporcional_dias"/>
+              <field name="no_provision_anios_servicio"/>
+              <field name="activo"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_remu_conf_concepto" model="ir.actions.act_window">
+    <field name="name">Haberes y Descuentos (catálogo)</field>
+    <field name="res_model">remu.conf.concepto</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- ===================== SOBRETIEMPO (CONFIGURACIÓN) ===================== -->
+  <record id="view_remu_conf_stipo_tree" model="ir.ui.view">
+    <field name="name">remu.conf.sobretiempo.tipo.tree</field>
+    <field name="model">remu.conf.sobretiempo.tipo</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="code"/>
+        <field name="factor"/>
+        <field name="requiere_aprobacion"/>
+        <field name="activo"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_remu_conf_stipo_form" model="ir.ui.view">
+    <field name="name">remu.conf.sobretiempo.tipo.form</field>
+    <field name="model">remu.conf.sobretiempo.tipo</field>
+    <field name="arch" type="xml">
+      <form string="Tipo de Sobretiempo">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="code"/>
+            <field name="factor"/>
+            <field name="requiere_aprobacion"/>
+            <field name="activo"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_remu_conf_stipo" model="ir.actions.act_window">
+    <field name="name">Sobretiempo (catálogo)</field>
+    <field name="res_model">remu.conf.sobretiempo.tipo</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- ===================== MENÚS (BAJO menu_remu_conf) ===================== -->
+  <menuitem id="menu_remu_conf_aus_tipo"
+            name="Ausencias"
+            parent="menu_remu_conf"
+            action="action_remu_conf_aus_tipo"
+            sequence="10"/>
+
+  <menuitem id="menu_remu_conf_concepto"
+            name="Haberes y Descuentos"
+            parent="menu_remu_conf"
+            action="action_remu_conf_concepto"
+            sequence="20"/>
+
+  <menuitem id="menu_remu_conf_stipo"
+            name="Sobretiempo"
+            parent="menu_remu_conf"
+            action="action_remu_conf_stipo"
+            sequence="30"/>
+</odoo>

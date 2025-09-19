@@ -1,0 +1,45 @@
+<odoo>
+  <record id="view_remu_afp_tree" model="ir.ui.view">
+    <field name="name">remu.afp.tree</field>
+    <field name="model">remu.afp</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="code"/>
+        <field name="vat"/>
+        <field name="tasa_trabajador"/>
+        <field name="tasa_empleador"/>
+        <field name="tasa_sis"/>
+        <field name="active"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_remu_afp_form" model="ir.ui.view">
+    <field name="name">remu.afp.form</field>
+    <field name="model">remu.afp</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="code"/>
+            <field name="vat"/>
+            <field name="tasa_trabajador"/>
+            <field name="tasa_empleador"/>
+            <field name="tasa_sis"/>
+            <field name="active"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_remu_afp" model="ir.actions.act_window">
+    <field name="name">AFP</field>
+    <field name="res_model">remu.afp</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_remu_afp" name="AFP" parent="menu_remu_tablas" action="action_remu_afp" sequence="10"/>
+</odoo>

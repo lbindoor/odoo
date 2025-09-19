@@ -1,0 +1,6 @@
+id,name,code,vat,tasa_trabajador,tasa_empleador,tasa_sis,active
+afp_habitat,AFP Habitat,HAB,96.828.000-6,0.0,0.0,0.0,1
+afp_provida,AFP Provida,PRO,98.001.000-7,0.0,0.0,0.0,1
+afp_capital,AFP Capital,CAP,96.760.000-5,0.0,0.0,0.0,1
+afp_cuprum,AFP Cuprum,CUP,96.771.000-0,0.0,0.0,0.0,1
+afp_modelo,AFP Modelo,MOD,76.517.530-1,0.0,0.0,0.0,1

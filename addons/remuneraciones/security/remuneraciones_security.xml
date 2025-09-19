@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+    <record id="group_remu_user" model="res.groups">
+      <field name="name">Remuneraciones Usuario</field>
+      <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+    <record id="group_remu_manager" model="res.groups">
+      <field name="name">Remuneraciones Manager</field>
+      <field name="implied_ids" eval="[(4, ref('group_remu_user'))]"/>
+      <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,6 @@
+id,name,code,vat,precio_plan,currency_id/id,active
+isapre_colmena,Colmena,ISCOL,81.496.800-8,0.0,base.CLP,1
+isapre_cruzblanca,Cruz Blanca,ISCB,76.522.370-2,0.0,base.CLP,1
+isapre_consalud,Consalud,ISCONS,71.274.400-0,0.0,base.CLP,1
+isapre_masvida,Nueva MasVida,ISMVD,76.782.240-2,0.0,base.CLP,1
+isapre_banmedica,Banmédica,ISBMD,71.182.710-0,0.0,base.CLP,1

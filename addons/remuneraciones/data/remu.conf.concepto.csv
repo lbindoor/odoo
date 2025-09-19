@@ -1,0 +1,10 @@
+id,code,name,nature,imponible,tributa,activo
+cpto_sueldo_base,SB,Sueldo Base,haber,1,1,1
+cpto_gratificacion,GRAT,Gratificación,haber,1,1,1
+cpto_colacion,COL,Colación,haber,0,0,1
+cpto_mov,MOV,Movilización,haber,0,0,1
+cpto_desc_loan,DPR,Descuento Préstamo,descuento,1,0,1
+cpto_afp,DAFP,AFP (Descuento),descuento,1,0,1
+cpto_salud,DSAL,Salud 7%,descuento,1,0,1
+cpto_sc_trabajador,DSCT,Seguro Cesantía Trabajador,descuento,1,0,1
+cpto_sc_empleador,SCEM,Seguro Cesantía Empleador,haber,1,0,1

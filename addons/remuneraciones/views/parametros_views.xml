@@ -1,0 +1,160 @@
+<odoo>
+  <!-- UF -->
+  <record id="view_remu_param_uf_tree" model="ir.ui.view">
+    <field name="name">remu.param.uf.tree</field>
+    <field name="model">remu.param.uf</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="date"/>
+        <field name="value"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_remu_param_uf_form" model="ir.ui.view">
+    <field name="name">remu.param.uf.form</field>
+    <field name="model">remu.param.uf</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet><group><field name="date"/><field name="value"/></group></sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_remu_param_uf" model="ir.actions.act_window">
+    <field name="name">UF</field>
+    <field name="res_model">remu.param.uf</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- UTM -->
+  <record id="view_remu_param_utm_tree" model="ir.ui.view">
+    <field name="name">remu.param.utm.tree</field>
+    <field name="model">remu.param.utm</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="year"/>
+        <field name="month"/>
+        <field name="value"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_remu_param_utm_form" model="ir.ui.view">
+    <field name="name">remu.param.utm.form</field>
+    <field name="model">remu.param.utm</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet><group><field name="year"/><field name="month"/><field name="value"/></group></sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_remu_param_utm" model="ir.actions.act_window">
+    <field name="name">UTM</field>
+    <field name="res_model">remu.param.utm</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Ingreso Mínimo -->
+  <record id="view_remu_param_ingmin_tree" model="ir.ui.view">
+    <field name="name">remu.param.ingreso.minimo.tree</field>
+    <field name="model">remu.param.ingreso.minimo</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="date_from"/>
+        <field name="amount"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_remu_param_ingmin_form" model="ir.ui.view">
+    <field name="name">remu.param.ingreso.minimo.form</field>
+    <field name="model">remu.param.ingreso.minimo</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet><group><field name="date_from"/><field name="amount"/></group></sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_remu_param_ingmin" model="ir.actions.act_window">
+    <field name="name">Ingreso Mínimo</field>
+    <field name="res_model">remu.param.ingreso.minimo</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Tabla Impuestos -->
+  <record id="view_remu_param_tabimp_tree" model="ir.ui.view">
+    <field name="name">remu.param.tabla.impuestos.tree</field>
+    <field name="model">remu.param.tabla.impuestos</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="tramo"/>
+        <field name="desde"/>
+        <field name="hasta"/>
+        <field name="tasa"/>
+        <field name="rebaja"/>
+        <field name="vigente_desde"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_remu_param_tabimp_form" model="ir.ui.view">
+    <field name="name">remu.param.tabla.impuestos.form</field>
+    <field name="model">remu.param.tabla.impuestos</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="tramo"/>
+            <field name="desde"/>
+            <field name="hasta"/>
+            <field name="tasa"/>
+            <field name="rebaja"/>
+            <field name="vigente_desde"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_remu_param_tabimp" model="ir.actions.act_window">
+    <field name="name">Tabla Impuestos</field>
+    <field name="res_model">remu.param.tabla.impuestos</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Topes -->
+  <record id="view_remu_param_topes_tree" model="ir.ui.view">
+    <field name="name">remu.param.topes.tree</field>
+    <field name="model">remu.param.topes</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="vigente_desde"/>
+        <field name="tope_imponible"/>
+        <field name="tope_salud"/>
+        <field name="tope_seguro_cesantia"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_remu_param_topes_form" model="ir.ui.view">
+    <field name="name">remu.param.topes.form</field>
+    <field name="model">remu.param.topes</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="vigente_desde"/>
+            <field name="tope_imponible"/>
+            <field name="tope_salud"/>
+            <field name="tope_seguro_cesantia"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_remu_param_topes" model="ir.actions.act_window">
+    <field name="name">Topes</field>
+    <field name="res_model">remu.param.topes</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_remu_param_uf" name="UF" parent="menu_remu_parametros" action="action_remu_param_uf" sequence="10"/>
+  <menuitem id="menu_remu_param_utm" name="UTM" parent="menu_remu_parametros" action="action_remu_param_utm" sequence="20"/>
+  <menuitem id="menu_remu_param_ingmin" name="Ingreso Mínimo" parent="menu_remu_parametros" action="action_remu_param_ingmin" sequence="30"/>
+  <menuitem id="menu_remu_param_tabimp" name="Tabla Impuestos" parent="menu_remu_parametros" action="action_remu_param_tabimp" sequence="40"/>
+  <menuitem id="menu_remu_param_topes" name="Topes (Imponible/Salud/Cesantía)" parent="menu_remu_parametros" action="action_remu_param_topes" sequence="50"/>
+</odoo>

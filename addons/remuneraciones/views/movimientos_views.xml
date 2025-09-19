@@ -1,0 +1,131 @@
+<odoo>
+  <!-- Mov: Ausencias -->
+  <record id="view_remu_mov_aus_tree" model="ir.ui.view">
+    <field name="name">remu.mov.ausencia.tree</field>
+    <field name="model">remu.mov.ausencia</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="employee_id"/>
+        <field name="tipo_id"/>
+        <field name="date_from"/>
+        <field name="date_to"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_remu_mov_aus_form" model="ir.ui.view">
+    <field name="name">remu.mov.ausencia.form</field>
+    <field name="model">remu.mov.ausencia</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="employee_id"/>
+            <field name="tipo_id"/>
+            <field name="date_from"/>
+            <field name="date_to"/>
+            <field name="state"/>
+          </group>
+          <group>
+            <field name="justificante" filename="justificante_filename"/>
+            <field name="justificante_filename" invisible="1"/>
+          </group>
+          <notebook>
+            <page string="Notas"><field name="notes"/></page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_remu_mov_aus" model="ir.actions.act_window">
+    <field name="name">Ausencias</field>
+    <field name="res_model">remu.mov.ausencia</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Mov: Haberes y Descuentos -->
+  <record id="view_remu_mov_hd_tree" model="ir.ui.view">
+    <field name="name">remu.mov.haber.descuento.tree</field>
+    <field name="model">remu.mov.haber.descuento</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="employee_id"/>
+        <field name="concepto_id"/>
+        <field name="date"/>
+        <field name="amount"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_remu_mov_hd_form" model="ir.ui.view">
+    <field name="name">remu.mov.haber.descuento.form</field>
+    <field name="model">remu.mov.haber.descuento</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="employee_id"/>
+            <field name="concepto_id"/>
+            <field name="date"/>
+            <field name="amount"/>
+            <field name="state"/>
+          </group>
+          <notebook>
+            <page string="Notas"><field name="notes"/></page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_remu_mov_hd" model="ir.actions.act_window">
+    <field name="name">Haberes y Descuentos</field>
+    <field name="res_model">remu.mov.haber.descuento</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Mov: Sobretiempo -->
+  <record id="view_remu_mov_st_tree" model="ir.ui.view">
+    <field name="name">remu.mov.sobretiempo.tree</field>
+    <field name="model">remu.mov.sobretiempo</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="employee_id"/>
+        <field name="tipo_id"/>
+        <field name="date"/>
+        <field name="hours"/>
+        <field name="factor"/>
+        <field name="approved"/>
+      </tree>
+    </field>
+  </record>
+  <record id="view_remu_mov_st_form" model="ir.ui.view">
+    <field name="name">remu.mov.sobretiempo.form</field>
+    <field name="model">remu.mov.sobretiempo</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="employee_id"/>
+            <field name="tipo_id"/>
+            <field name="date"/>
+            <field name="hours"/>
+            <field name="factor" readonly="1"/>
+            <field name="approved"/>
+          </group>
+          <notebook>
+            <page string="Notas"><field name="notes"/></page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_remu_mov_st" model="ir.actions.act_window">
+    <field name="name">Sobretiempo</field>
+    <field name="res_model">remu.mov.sobretiempo</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_remu_mov_aus" name="Ausencias" parent="menu_remu_movimientos" action="action_remu_mov_aus" sequence="10"/>
+  <menuitem id="menu_remu_mov_hd" name="Haberes y Descuentos" parent="menu_remu_movimientos" action="action_remu_mov_hd" sequence="20"/>
+  <menuitem id="menu_remu_mov_st" name="Sobretiempo" parent="menu_remu_movimientos" action="action_remu_mov_st" sequence="30"/>
+</odoo>

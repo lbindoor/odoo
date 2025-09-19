@@ -1,0 +1,3 @@
+id,name,code,factor,requiere_aprobacion,activo
+st_50,Sobretiempo 50%,ST50,50.0,1,1
+st_100,Sobretiempo 100%,ST100,100.0,1,1

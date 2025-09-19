@@ -1,0 +1,5 @@
+id,name,code,requiere_justificacion,descuenta_remuneracion,activo
+aus_permiso_admin,Permiso Administrativo,PA,1,0,1
+aus_licencia_medica,Licencia Médica,LM,1,0,1
+aus_inasistencia,Inasistencia,INA,1,1,1
+aus_vacaciones,Vacaciones,VAC,0,0,1

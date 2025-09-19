@@ -1,0 +1,7 @@
+<odoo>
+  <menuitem id="menu_remu_root" name="Remuneraciones" sequence="10" groups="remuneraciones.group_remu_user"/>
+  <menuitem id="menu_remu_tablas" name="Tablas" parent="menu_remu_root" sequence="10"/>
+  <menuitem id="menu_remu_parametros" name="Parámetros" parent="menu_remu_root" sequence="20"/>
+  <menuitem id="menu_remu_movimientos" name="Movimientos" parent="menu_remu_root" sequence="30"/>
+  <menuitem id="menu_remu_conf" name="Configuraciones" parent="menu_remu_root" sequence="40"/>
+</odoo>

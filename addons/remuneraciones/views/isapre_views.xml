@@ -1,0 +1,41 @@
+<odoo>
+  <record id="view_remu_isapre_tree" model="ir.ui.view">
+    <field name="name">remu.isapre.tree</field>
+    <field name="model">remu.isapre</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="code"/>
+        <field name="vat"/>
+        <field name="precio_plan"/>
+        <field name="active"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_remu_isapre_form" model="ir.ui.view">
+    <field name="name">remu.isapre.form</field>
+    <field name="model">remu.isapre</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="code"/>
+            <field name="vat"/>
+            <field name="precio_plan"/>
+            <field name="active"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_remu_isapre" model="ir.actions.act_window">
+    <field name="name">Isapres</field>
+    <field name="res_model">remu.isapre</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_remu_isapre" name="Isapres" parent="menu_remu_tablas" action="action_remu_isapre" sequence="20"/>
+</odoo>

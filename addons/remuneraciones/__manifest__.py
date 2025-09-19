@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+{
+    "name": "Remuneraciones",
+    "summary": "Base funcional de Remuneraciones Chile (catálogos, parámetros y movimientos)",
+    "version": "17.0.1.0.1",
+    "category": "Human Resources/Payroll",
+    "author": "Apex / AutomatizaML",
+    "website": "https://automatiza.cl",
+    "license": "LGPL-3",
+    "depends": ["base", "hr"],
+    "data": [
+        "security/remuneraciones_security.xml",
+        "security/ir.model.access.csv",
+        "views/menu.xml",
+        "views/afp_views.xml",
+        "views/isapre_views.xml",
+        "views/parametros_views.xml",
+        "views/conf_views.xml",
+        "views/movimientos_views.xml",
+        # CSVs must be named exactly as model names
+        "data/remu.afp.csv",
+        "data/remu.isapre.csv",
+        "data/remu.param.uf.csv",
+        "data/remu.param.utm.csv",
+        "data/remu.param.ingreso.minimo.csv",
+        "data/remu.param.tabla.impuestos.csv",
+        "data/remu.param.topes.csv",
+        "data/remu.conf.concepto.csv",
+        "data/remu.conf.ausencia.tipo.csv",
+        "data/remu.conf.sobretiempo.tipo.csv",
+    ],
+    "application": True,
+}
